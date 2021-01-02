@@ -1,0 +1,2 @@
+--ghci> let l = (1: zipWith4 (\a b c d->a+b+c+d) l (0:l) (0:0:l) (0:0:0:l))
+--ghci> l!!50

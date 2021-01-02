@@ -1,0 +1,2 @@
+--ghci> let f n = a - 1 where n'=fromIntegral n; a=floor$(250000-(n'^2-n'))/n'
+--ghci> sum$map f [1..499]

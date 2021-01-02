@@ -1,0 +1,50 @@
+name:                project-euler-haskell2
+version:             0.1.0.0
+github:              "yasuabe1984/project-euler-haskell2"
+license:             BSD3
+author:              "Yasuyuki Abe"
+maintainer:          "yasu@yasuabe.net"
+copyright:           "2021 Yasuyuki Abe"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/yasuabe1984/project-euler-haskell2#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- array
+- primes
+
+library:
+  source-dirs: src
+
+executables:
+  project-euler-haskell2-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - project-euler-haskell2
+
+tests:
+  project-euler-haskell2-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - project-euler-haskell2

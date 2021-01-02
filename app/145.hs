@@ -1,0 +1,42 @@
+-- TODO: half manual
+isReversible n = let m = n + (read.reverse.show) n in
+                 (0 /= mod n 10) && 
+                 (all (\ch -> elem ch "13579") $ show m)
+
+--ghci> length$filter isReversible [1..999]
+--120
+--ghci> length$filter isReversible [1000..9999]
+--600
+--ghci> length$filter isReversible [10000..99999]
+--0
+--ghci> length$filter isReversible [100000..999999]
+--18000
+--ghci> length$filter isReversible [1000000,1000011..9999999]
+-- ...
+-- ghci> let n=80000001 in length$filter isReversible [n, n+2..n+9999999]
+-- 27000
+--
+-- --> Excel -> 120
+-- 600
+-- 0
+-- 18000
+-- 0
+-- 2500
+-- 2500
+-- 5000
+-- 5000
+-- 7500
+-- 7500
+-- 10000
+-- 10000
+-- 108000
+-- 108000
+-- 81000
+-- 81000
+-- 54000
+-- 54000
+-- 27000
+-- 27000
+-- 0
+-- 608720 <-- this is it.
+--
